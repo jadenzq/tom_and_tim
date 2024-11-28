@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
         body.velocity = new Vector2(
             body.velocity.x, // player x unchanged
-            speed * 3 // move player y direction
+            speed * 2 // move player y direction
         );
         
         animator.SetTrigger("jump");
