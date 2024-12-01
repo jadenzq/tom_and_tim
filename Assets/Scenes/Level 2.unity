@@ -1884,28 +1884,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1302645366388916430, guid: 36b5d8f44dc2ae446b7d8a0be10e5b12, type: 3}
   m_PrefabInstance: {fileID: 1302645368067704711}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &538628365 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1302645366388916416, guid: 36b5d8f44dc2ae446b7d8a0be10e5b12, type: 3}
-  m_PrefabInstance: {fileID: 1302645368067704711}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &538628367
-CircleCollider2D:
+--- !u!114 &538628369
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305086968}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00000029315822, y: 0.45918965}
-  serializedVersion: 2
-  m_Radius: 0.70137763
---- !u!114 &538628368
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa4b6f9dc84c0a4c98c7f6928950048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPressed: 1
+  portal: {fileID: 1430840609}
+  remainingTime: 0
+--- !u!114 &538628371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1921,32 +1915,34 @@ MonoBehaviour:
   interactAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 305086968}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 538628369}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: ClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &538628369
-MonoBehaviour:
+--- !u!58 &538628372
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305086968}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efa4b6f9dc84c0a4c98c7f6928950048, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPressed: 0
-  animator: {fileID: 538628365}
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000029430714, y: 0.4688276}
+  serializedVersion: 2
+  m_Radius: 0.7110156
 --- !u!1001 &609842049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3263,6 +3259,10 @@ PrefabInstance:
     - target: {fileID: 7343209484635447302, guid: cda0768de109e6040a25570339e6d392, type: 3}
       propertyPath: m_Name
       value: Portal (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343209484635447302, guid: cda0768de109e6040a25570339e6d392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cda0768de109e6040a25570339e6d392, type: 3}
@@ -4890,6 +4890,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1430840609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7343209484635447302, guid: cda0768de109e6040a25570339e6d392, type: 3}
+  m_PrefabInstance: {fileID: 3479579732231659265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1430840612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430840609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4cc3ecdebf3bd745bd108a6780835ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1513753405 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5745771000530289182, guid: eeca503a14f5fa844a988d150d23277c, type: 3}
@@ -5531,6 +5548,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 218798377}
     m_Modifications:
+    - target: {fileID: 1302645366388916416, guid: 36b5d8f44dc2ae446b7d8a0be10e5b12, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1302645366388916417, guid: 36b5d8f44dc2ae446b7d8a0be10e5b12, type: 3}
       propertyPath: m_Name
       value: Button
@@ -5716,6 +5737,10 @@ PrefabInstance:
     - target: {fileID: 7343209484635447302, guid: cda0768de109e6040a25570339e6d392, type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343209484635447302, guid: cda0768de109e6040a25570339e6d392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cda0768de109e6040a25570339e6d392, type: 3}
