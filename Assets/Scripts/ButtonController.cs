@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
-    public bool isPressed;
     private Animator animator;
     public GameObject portal;
-    public float remainingTime;
     Coroutine timer;
 
     public void ClickButton(){
@@ -33,7 +31,7 @@ public class ButtonController : MonoBehaviour
     }
 
     IEnumerator Timer(){
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(10);
         portal.SetActive(false);
     }
 }
