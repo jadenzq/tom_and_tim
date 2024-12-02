@@ -7,13 +7,13 @@ public class PortalController : MonoBehaviour
     public Transform destination;
     Coroutine timer;
 
+    public GameObject box;
     public GameObject currentPortal;
     public GameObject targetPortal;
     public GameObject player;
     public void Teleport(){
         if(targetPortal.activeInHierarchy == false){
             targetPortal.SetActive(true);
-            Debug.Log("Here");
             player.transform.position = currentPortal.GetComponent<PortalController>().GetDestination().position;
             if(timer != null){
                 StopCoroutine(timer);
@@ -35,11 +35,17 @@ public class PortalController : MonoBehaviour
     }
 
     IEnumerator Timer(){
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         targetPortal.SetActive(false);
     }
 
     public Transform GetDestination(){
         return destination;
+    }
+
+    public void GenerateBox(){
+        if(box.activeInHierarchy == false){
+            box.SetActive(true);
+        }
     }
 }
