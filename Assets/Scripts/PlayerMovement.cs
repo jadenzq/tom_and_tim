@@ -58,9 +58,9 @@ public class PlayerMovement : MonoBehaviour
         
         */
         if (horizontalInput > 0.01f)
-            transform.localScale = new Vector3(6, 6, 6);
+            transform.localScale = new Vector3(6, 6, 6); // flip to facing right
         else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-6, 6, 6);
+            transform.localScale = new Vector3(-6, 6, 6); // flip to facing left
 
 
         /* 
