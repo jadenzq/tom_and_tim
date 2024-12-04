@@ -372,6 +372,8 @@
 "Assets/Scripts/EnemyController.cs"
 "Assets/Scripts/Health.cs"
 "Assets/Scripts/Interactor.cs"
+"Assets/Scripts/MenuController.cs"
+"Assets/Scripts/MenuParallax.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/PortalController.cs"
 "Assets/Scripts/TrapController.cs"
